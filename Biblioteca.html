@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang='pt-BR'>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Biblioteca Virtual</title>
+        <link rel="stylesheet" href="biblioteca-style.css">
+        <script src="biblioteca.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="titulo-header">
+                <h1>Biblioteca Virtual</h1>
+            </div>
+
+            <nav>
+            <a href="#catalogo">Catálogo de Livros</a>
+            <a href="#sugestoes">Sugestões para Biblioteca</a>
+            </nav>
+
+        </header>
+
+        <main>
+            <section id="catalogo">
+                <h2>Nossos Livros</h2>
+                <label for="campo-busca">Pesquisar livro:</label>
+                <input type="search" id="campo-busca" placeholder="Digite o nome do Livro">
+
+                <div class="filtros" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div>
+                    <label for="filtro-genero">Gênero:</label>
+                    <select id="filtro-genero" style="padding: 0.5rem; margin-top: 0.3rem; display: block;">
+                        <option value="todos">Todos os Gêneros</option>
+                        <option value="romance">Romance</option>
+                        <option value="fantasia">Fantasia</option>
+                        <option value="ficcao">Ficção Científica</option>
+                        <option value="classico">Clássicos</option>
+                    </select>
+                </div>
+
+            <div>
+               <label for="filtro-idade">Faixa Etária:</label>
+               <select id="filtro-idade" style="padding: 0.5rem; margin-top: 0.3rem; display: block;">
+                  <option value="todas">Todas as Idades</option>
+                  <option value="infantil">Infantil</option>
+                  <option value="juvenil">Juvenil</option>
+                  <option value="adulto">Adulto</option>
+               </select>
+            </div>
+         </div>
+ <p id="aviso-vazio" style="display: none; font-style: italic; color: #5c4033; margin-top: 1rem;">Nenhum livro encontrado com esses critérios.</p>
+         <div class="grade-livros">
+            <article class="livro" data-genero="romance" data-idade="adulto">
+                <h3>Orgulho e Preconceito</h3>
+                <p>Jane Austen</p>
+                   <img src="imagens/orgulho-precon.jpg"
+                        alt="Capa do livro Orgulho e Preconceito">
+            </article>
+            <article class="livro" data-genero="fantasia" data-idade="juvenil">
+                <h3>Harry Potter e a Pedra Filosofal</h3> 
+                <p>J. K. Rowling</p>
+                <img src="imagens/harry.jpg"
+                    alt="Capa do livro Harry Potter e a Pedra Filosofal">
+            </article>
+            <article class="livro" data-genero="ficcao" data-idade="adulto">
+                <h3>Fahrenheit 451</h3>
+                <p>Ray Bradbury</p>
+                <img src="imagens/fahrenheit-451.jpg"
+                    alt="Fahrenheit 451">
+            </article>
+            <article class="livro" data-genero="classico" data-idade="adulto">
+                <h3>Dom Casmurro</h3>
+                <p>Machado de Assis</p>
+                <img src="imagens/dom-casmurro.jpg"
+                    alt="Capa do livro Dom Casmurro">
+            </article>
+            <article class="livro" data-genero="fantasia" data-idade="juvenil">
+                <h3>O Senhor dos Anéis</h3>
+                <p>J. R. R. Tolkien</p>
+                <img src="imagens/senhor-dos-aneis.jpg"
+                    alt="Capa do livro Senhor dos Anéis">
+            </article>
+            <article class="livro" data-genero="ficcao" data-idade="infantil">
+                <h3>O Pequeno Príncipe</h3>
+                <p>Antoine de Saint-Exupéry</p>
+                <img src="imagens/pequeno-prin.jpg"
+                    alt="Capa do livro Pequeno Príncipe">
+            </article>
+         </div>
+        </section>
+        <section id="sugestoes">
+            <h2>Não achou o livro que procurava? Sugira ele aqui!</h2>
+            <form id="form-sugestao" action="#" method="post">
+                <div>
+                    <label for="nome">Nome do Leitor</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div>
+                    <label for="titulo-livro">Título do Livro</label>
+                    <input type="text" id="titulo-livro" required>
+                </div>
+
+                <button type="submit">Enviar Sugestão</button>
+            </form>
+            <span id="mensagem"></span> <!--onde o js vai escrever  mensagem de erro ou sucesso -->
+        </section>
+        </main>    
+        <footer>
+            <p>Desenvolvimento Web - Biblioteca Virtual</p>
+            <a href="#">Voltar ao topo</a>
+        </footer>
+    </body>
+</html>
